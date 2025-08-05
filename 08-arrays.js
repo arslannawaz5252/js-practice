@@ -33,6 +33,3 @@ const myn2=numbers.splice(1,3) // modifies the orignal array by removing given r
  console.log("C",numbers);
  
  console.log(myn2);
-
-
-
