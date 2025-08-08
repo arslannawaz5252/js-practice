@@ -72,3 +72,27 @@ const {courseInstuctor:instructor}=course // object destruction
 //console.log(courseInstuctor);
 console.log(instructor);
 
+
+
+//   APi values
+
+{
+"name":"Arslan",
+"age":12,
+"location":"jampur"
+
+}
+
+
+// in array form also api can exist
+[
+    {
+
+    },
+    {
+
+    },
+    {
+
+    }
+]
