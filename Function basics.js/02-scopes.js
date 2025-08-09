@@ -3,21 +3,21 @@
 //  var c=49
 
 
-// if (true){
-//      let a=56   // block-scoped, shadows outer 'a'
-//     const b=65        // block-scoped, shadows outer 'b'
-// console.log("inner:",a);  
-// console.log("inner:",b);
+if (true){
+     let a=56   // block-scoped, shadows outer 'a'
+    const b=65        // block-scoped, shadows outer 'b'
+console.log("inner:",a);  
+console.log("inner:",b);
 
 
  
-//var c=45  //   'var' is function-scoped (or global here), overwrites outer 'c'
-// console.log("inner:",ci);
+var c=45  //   'var' is function-scoped (or global here), overwrites outer 'c'
+console.log("inner:",ci);
 
-//}
-//  console.log(a);
-//  console.log(b);
-// console.log(c);
+}
+ console.log(a);
+ console.log(b);
+console.log(c);
 
 
 function one() {
