@@ -18,3 +18,5 @@
     console.log(`Db connectd to,${name}`);
     
 })('Arslan')
+
+// we used it to avoid global scope pollution of global variable

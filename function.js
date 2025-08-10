@@ -85,5 +85,5 @@ function returnsecondValue(getarray) {
     return getarray[2]
     
 }
-console.log(returnsecondValue(mynewArray))
-console.log(returnsecondValue([234,454,500,123]))
+//console.log(returnsecondValue(mynewArray))
+//console.log(returnsecondValue([234,454,500,123]))
