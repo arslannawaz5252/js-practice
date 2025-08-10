@@ -19,4 +19,4 @@
     
 })('Arslan')
 
-// we used it to avoid global scope pollution of global variable
+// we used it to avoid global scope pollution of global variable 
