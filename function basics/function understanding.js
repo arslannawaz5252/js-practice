@@ -76,6 +76,7 @@ handleObjects({
     name:"Arslan",           //another method to call object in function
     price:800
 }) 
+
  
 
 // arrays in functions 
