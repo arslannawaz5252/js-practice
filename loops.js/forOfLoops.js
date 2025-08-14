@@ -33,9 +33,22 @@ map.set('usa',"united state of america")
 
 
 for (const [key,value] of map) {
-    //console.log(key ,':-',value);
+    console.log(key ,':-',value);
     
 }
+
+
+// That [key, value] syntax is array destructuring — it takes an array and
+//  unpacks its elements into separate variables
+
+
+
+
+
+
+
+
+
 
 // 
 const myobject={
