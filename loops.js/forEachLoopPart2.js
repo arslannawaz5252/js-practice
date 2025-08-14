@@ -9,7 +9,7 @@ const mYnums=[1,2,3,4,5]
 const number=mYnums.filter( (num)=>{
      return num>4
 })
-//console.log(number);
+console.log(number);
 
 // other method to return an array in for each loop
 
