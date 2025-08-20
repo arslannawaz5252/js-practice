@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> chai aur code | Dom  </title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+    function addlanguage(langName) {
+       const li= document.createElement('li')
+       li.innerHTML=`${langName}`
+       document.querySelector('.language').appendChild(li)
+        
+    }
+    addlanguage('typescript')
+    addlanguage('python')
+
+    function addoptlanguage(langName) {
+        const li=document.createElement('li')
+        const addText=document.createTextNode(langName)
+        li.appendChild(addText)
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptlanguage('c++')
+    addoptlanguage('DSA')
+
+    //Edit 
+
+    const replac=document.querySelector("li:nth-child(3)")
+    console.log(replac);
+    const addnew=document.createElement('li')
+    addnew.textContent="css"
+    replac.replaceWith(addnew)
+
+    //remove
+
+    const remo=document.querySelector('li:last-child')
+    remo.remove()
+
+
+</script>
+</html>
+<!--
+innerHTML → may create element nodes inside, depending on content. Traversal may see a nested structure.
+
+createTextNode → always produces a single text node, no parsing. Traversal is simpler and safer.-->
