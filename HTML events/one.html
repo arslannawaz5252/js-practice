@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body>
+    <div id="images">
+        <h2>Amazing images</h2>
+    <ul>
+        <li><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQemM0PvbIWYV2OWlYohWWXbHC0erTocbpe38IAPhmJIohtV2dI4NKjb7ghzk7ZkOQmyA_zlVrLOSDsTImsrjvM3hvaBktULT32Ke0e81U" alt="babar azam" id="pakistani" width="200px"></li>
+        <li><img  src="https://scontent.flhe3-1.fna.fbcdn.net/v/t39.30808-6/531410211_1192434029581695_2437831794237034433_n.jpg?stp=dst-jpg_p843x403_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=btMdwxtIsY8Q7kNvwFabtUT&_nc_oc=AdmC3QC-K2M3Td_QWOAlfK3lqZyXirIjThrA0TKbuM7xzA5roqznEUD72pTz2cgXDa0&_nc_zt=23&_nc_ht=scontent.flhe3-1.fna&_nc_gid=2TovD-wly8AKJqmr4NTWqQ&oh=00_AfXUxEMydNn2hqdV9AYU3KL8-GMDDg3OhAI_b-e9LlX3Mg&oe=68B0C34E" id="pakistani" alt="babar azam" width="200px" ></li>
+        <li><img src="https://www.geosuper.tv/assets/uploads/updates/2021-12-22/12454_8540168_updates.gif" alt="babar azam" width="200px" id="karachi" ></li>
+        <li><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*2oV-3Nb_sOAXGXZsJHSYcg.jpeg" alt="babar azam" width="200px" id="Lahore"></li>
+        <a href="https://www.google.com/search?q=google&rlz=1C1CHZO_enPK1148PK1148&oq=goo&gs_lcrp=EgZjaHJvbWUqDQgBEAAYgwEYsQMYgAQyBggAEEUYOTINCAEQABiDARixAxiABDINCAIQABiDARixAxiABDIKCAMQABixAxiABDINCAQQABiDARixAxiABDINCAUQABiDARixAxiABDINCAYQABiDARixAxiABDIKCAcQABixAxiABDINCAgQABiDARixAxiABDINCAkQABiDARixAxiABNIBCTcyNDZqMGoxNagCCLACAfEFmZNAdMuZhSA&sourceid=chrome&ie=UTF-8">Google</a>
+    </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('karachi').onclick=function(){
+    //     alert('cliked again')
+    // }
+    
+    // document.getElementById('karachi').addEventListener('click',function(){
+    //     alert('bobzi the king came back')
+    // })
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('click inside the url')
+
+    // })
+    // document.getElementById('karachi').addEventListener('click',function(e){
+    //     e.stopPropagation()
+    //     console.log('bobzi the king came back');
+    // })
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('click inside the url')
+
+    // },true)
+    // document.getElementById('karachi').addEventListener('click',function(e){
+        
+        
+    //     console.log('bobzi the king came back');
+    // })
+
+document.querySelector('#images').addEventListener('click',function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName==='IMG'){
+        console.log(e.target.id);
+       let remove=e.target.parentNode
+    remove.remove() 
+    }
+    
+})
+// 
+    
+</script>
+</html>
+<!--  Event Bubbling (Default in JS)
+
+//The event happens on the target first, then goes upward to its ancestors -->
+
+                      <!-- Event Capturing (Trickle-down)
+
+                 The event starts from the root and goes down to the target first.
+
+               You must enable capturing manually by passing true as the third argument in addEventListener. -->
