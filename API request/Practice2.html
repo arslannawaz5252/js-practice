@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Search</title>
+</head>
+<body style="background:#eee;">
+  <h2>Search GitHub User</h2>
+  
+  <input type="text" id="username" placeholder="Enter GitHub username">
+  <button id="searchBtn">Search</button>
+  
+  <div id="result" style="margin-top:20px;"></div>
+
+
+<script>
+  document.getElementById("searchBtn").onclick = function() {
+    const user = document.getElementById("username").value.trim();
+    if (!user) {
+      alert("Please enter a username");
+      return;
+    }
+
+    const url = `https://api.github.com/users/hiteshchoudhary${user}`;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = ""; // clear old data
+
+        if (xhr.status === 200) {
+          const data = JSON.parse(this.responseText);
+
+          // create image
+          const img = document.createElement("img");
+          img.src = data.avatar_url;
+          img.width = 150;
+
+          // create text
+          const h3 = document.createElement("h3");
+          h3.textContent = data.name || data.login;
+
+          const p = document.createElement("p");
+          p.textContent = "Followers: " + data.followers;
+
+          // add click on image → alert followers
+          img.onclick = function() {
+            alert(`${data.login} has ${data.followers} followers`);
+          };
+
+          // append everything
+          resultDiv.appendChild(img);
+          resultDiv.appendChild(h3);
+          resultDiv.appendChild(p);
+
+        } else {
+          resultDiv.textContent = "User not found!";
+        }
+      }
+    };
+    xhr.send();
+  };
+</script>
+</body>
+</html>
