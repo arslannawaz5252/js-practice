@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Data</title>
+</head>
+
+<body style="background-color: #868181;">
+    <h2>GitHub User Info</h2>
+    <div id="user-info"></div> <!-- Data will be added here -->
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+
+            // Get required fields
+            const photoUrl = data.avatar_url;
+            const followers = data.followers;
+
+            // Create an image element
+            const img = document.createElement('img');
+            img.src = photoUrl;
+            img.alt = "Profile Photo";
+            img.width = 150; // set size
+            img.style.cursor = "pointer";
+
+            // Create a paragraph for followers
+            const para = document.createElement('p');
+            para.textContent = `Followers: ${followers}`;
+            para.style.cursor = "pointer";
+            para.style.fontSize = "18px";
+            para.style.fontWeight = "bold";
+
+            // On clicking image → show alert with followers
+            img.onclick = function () {
+                alert(`Followers: ${followers}`);
+            };
+
+            // On clicking followers → show alert with photo URL
+            para.onclick = function () {
+                alert(`Photo URL: ${photoUrl}`);
+            };
+
+            // Append to body (inside #user-info div)
+            const container = document.getElementById('user-info');
+            container.appendChild(img);
+            container.appendChild(para);
+        }
+    }
+
+    xhr.send();
+</script>
+
+</html>
